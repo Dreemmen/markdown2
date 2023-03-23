@@ -55,14 +55,14 @@ And here. | Okay. | I think we get it.
 `
 const [text, setText] = useState(sample_text)
   const eventHandler = event => {
-    console.log(event.target.value)
+    setText(event.target.value)
   }
   marked.setOptions({breaks: true})
   return (
     <div className="wrapper">
       <textarea id="editor" defaultValue={sample_text} onChange={eventHandler}>
       </textarea>
-      <div id={"preview"} dangerouslySetInnerHTML={{__html: marked.parse(sample_text)}}></div>
+      <div id={"preview"} dangerouslySetInnerHTML={{__html: marked.parse(text)}}></div>
     </div>
   );
 }
